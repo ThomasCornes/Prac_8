@@ -30,3 +30,12 @@ def main():
     print("Total trip cost: ${:.2f}".format(bill_to_date))
     print("Taxis are now:")
     print_available_taxis(taxis)
+
+    def take_taxi_trip(taxi):
+        """Take taxi trip and return trip fare"""
+        distance = float(input("Drive how far? "))
+        taxi.start_fare()
+        taxi.drive(distance)
+        trip_fare = taxi.get_fare()
+        print("Your {} trip cost you ${:.2f}".format(taxi.name, trip_fare))
+        return trip_fare
