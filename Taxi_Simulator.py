@@ -32,10 +32,18 @@ def main():
     print_available_taxis(taxis)
 
     def take_taxi_trip(taxi):
-        """Take taxi trip and return trip fare"""
         distance = float(input("Drive how far? "))
         taxi.start_fare()
         taxi.drive(distance)
         trip_fare = taxi.get_fare()
         print("Your {} trip cost you ${:.2f}".format(taxi.name, trip_fare))
         return trip_fare
+
+def choose_valid_taxi(taxis):
+    print("Taxis available:")
+    print_available_taxis(taxis)
+    selected_taxi = int(input("Choose taxi: "))
+    if selected_taxi >= len(taxis) or selected_taxi < 0:
+        print("Invalid taxi choice")
+        selected_taxi = None
+    return selected_taxi
