@@ -47,3 +47,12 @@ def choose_valid_taxi(taxis):
         print("Invalid taxi choice")
         selected_taxi = None
     return selected_taxi
+
+def print_available_taxis(taxis):
+    """Print a list of available taxis"""
+    for i, taxi in enumerate(taxis):
+        print("{} - ".format(i), taxi)
+
+
+if __name__ == '__main__':
+    main()
